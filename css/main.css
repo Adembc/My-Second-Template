@@ -11,6 +11,7 @@ html{
 }
 body{
     font-family: 'Open Sans', sans-serif;
+    background-color: black;
 }
 ul{
     list-style: none;
@@ -45,6 +46,9 @@ a{
     justify-content: center;
     align-items: center;
 }
+img{
+  width: 100%;
+}
 /* End Global Role */
 
 /* Start Variables */
@@ -54,3 +58,57 @@ a{
 }
 /* End Variables */
 
+/* Start Header */
+
+header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative ; 
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+header .container::after{
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom:0px;
+  width: calc(100% - 30px);
+  height: 1px;
+  background-color: #a2a2a2 ; 
+  z-index: -1;
+}
+.logo img {
+  height: 50px;
+}
+nav{
+display: flex;
+justify-content: flex-end;
+}
+
+.links li {
+  display: inline-block;
+  padding: 0;
+}
+.links li a {
+  color: white;
+    transition: color , border-bottom .3s;
+    font-size: 15px;
+    padding: 0px 0 45px 15px;
+    z-index: 10;
+}
+.links li a.active ,
+.links li a:hover {
+  color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+
+}
+nav .search {
+    color: #fff;
+    font-size: 20px;
+    margin-left: 40px;
+    border-left: 1px solid #fff;
+    padding:7.5px 0 7.5px 20px ;
+    cursor: pointer;
+}
+/* End Header */
