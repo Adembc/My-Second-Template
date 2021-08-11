@@ -76,26 +76,29 @@ header .container::after{
   width: calc(100% - 30px);
   height: 1px;
   background-color: #a2a2a2 ; 
-  z-index: -1;
 }
 .logo img {
-  height: 50px;
+  height: 40px;
 }
 nav{
+flex: 1;
 display: flex;
 justify-content: flex-end;
+align-items: center;
 }
 
-.links li {
-  display: inline-block;
-  padding: 0;
+nav .links{
+  display: flex;
+  
 }
+
 .links li a {
-  color: white;
+    color: white;
     transition: color , border-bottom .3s;
     font-size: 15px;
-    padding: 0px 0 45px 15px;
+    padding: 0px 0 40px 15px;
     z-index: 10;
+    position: relative;
 }
 .links li a.active ,
 .links li a:hover {
@@ -110,5 +113,72 @@ nav .search {
     border-left: 1px solid #fff;
     padding:7.5px 0 7.5px 20px ;
     cursor: pointer;
+  
 }
+nav .menu {
+  display: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+
+}
+
+@media (max-width:767px){
+
+   header .container::after , header .container .links{
+    display: none;
+  }
+ 
+  nav .menu {
+    display: block ; 
+    position: relative;
+  }
+
+  header .container .links{
+    position: absolute;
+    top: 59%;
+    left: 0;
+    width: 100%;
+    padding-top: 30px;
+}
+  
+   header .container .links li a {
+
+    display: block;
+    padding: 10px;
+    transition: color  , font-weight , border-bottom .5s;
+    text-align: center;
+   }
+   .links li a.active {
+     color:white ; 
+     border-bottom: none;
+   }
+   .links li a:hover, 
+   .links li a:hover.active:hover {
+     font-weight: bold;
+     color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+   }
+
+   header nav .menu:hover + .links  , 
+  header .container .links:hover {
+    display: block;
+  }
+
+  
+}
+
+@media (max-width:334px){
+  .logo img{
+    height: 25px;
+  }
+  nav .search  {
+    margin-left: 20px;
+  }
+  header .container .hidden li a{
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+
 /* End Header */
