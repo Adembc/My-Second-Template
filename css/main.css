@@ -483,8 +483,7 @@ padding: 10px;
 /* Start Portfolio */
 .portfolio{
   padding-top: 100px;
-  padding-bottom: 150px;
-  position: relative;
+  padding-bottom: 100px;
 }
 .portfolio .container .filter{
   display: flex;
@@ -508,28 +507,31 @@ padding: 10px;
 
 .portfolio .album {
   display: grid;
-  grid-template-columns:  repeat(auto-fill , minmax(250px , 1fr));
+  grid-template-columns:  repeat(4 , minmax(250px , 1fr));
 }
-@media (min-width : 750px) and (max-width: 1013px) {
+@media (min-width : 500px) and (max-width: 1015px) {
   .portfolio .album {
      grid-template-columns: repeat(2 ,minmax(250px , 1fr));
    } 
-   
+ }
+@media (max-width : 499px)  {
+  .portfolio .album {
+     grid-template-columns: minmax(250px , 1fr);
+   } 
  }
 .portfolio .album .img-box{
   position: relative;
- overflow: hidden;
+  overflow: hidden;
 }
 .portfolio .album .img-box .hidden{
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -100%;
   width: 100%;
-  height: 70px;
   background-color: #fff;
-  z-index: -10;
-  transition:  z-index ,  bottom .3s .2s;
+  transition:    bottom .3s ;
   padding: 20px;
+  z-index: 5;
 }
 .portfolio .album .img-box .hidden h5{
   margin : 0 0 7px  ; 
@@ -541,12 +543,10 @@ padding: 10px;
 }
  .portfolio .album .img-box:hover .hidden{
   bottom: 0;
-  z-index: 10;
 } 
 .portfolio .album .img-box img{
   width: 100%;
   transition: transform   .3s;
-
 }
 .portfolio .album .img-box:hover img {
   transform: rotate(3deg) scale(1.1) ;
@@ -558,11 +558,9 @@ padding: 10px;
     color: white;
     cursor: pointer;
     border-radius: 6px;
-    position: absolute;
-    left: 50%;
-    bottom: 75px;
-    transform: translateX(-50%);
     transition: border , color , background-color .3s;
+    margin: 40px auto 0 ;
+    display: block;
 }
 .portfolio button:hover{
   color: var(--main-color);
@@ -571,3 +569,78 @@ padding: 10px;
 }
 
 /* End Portfolio */
+
+/* Start Video */
+
+.video{
+  padding: 0 0 80px  ; 
+  position: relative;
+}
+.video .video-parent{
+  position: relative;
+  width: 100%;
+}
+.video .video-parent::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0 0 0 / 40%);
+}
+.video-parent video {
+  max-width: 100%;
+}
+.video-parent .text{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform : translateY(-50%) ; 
+  width: 100%;
+  background-color: var(--transparent-color);
+  text-align: center;
+  padding: 50px;
+  color: #fff;
+}
+.video-parent .text h2{
+  margin: 0 0 25px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.video-parent .text  p{
+  margin: 0 0 40px;
+  line-height: 1.1;
+}
+.video-parent .text  a{
+  display: block;
+  color: #fff;
+  padding: 15px 20px;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #000 ; 
+  border-radius: 5px;
+  transition:  transform .3s;
+}
+.video-parent .text  a:hover{
+  transform: scale(0.95);
+}
+@media (max-width : 767px) {
+  .video-parent .text { 
+    padding:  20px;
+}
+.video-parent .text h2{
+  margin: 0 0 15px;
+  line-height: 1.2;
+  font-size: 18px;
+}
+.video-parent .text  p{
+  margin: 0 0 20px;
+  font-size: 15px;
+}
+.video-parent .text  a{
+  padding: 10px 15px;
+  font-size: 15px;
+}
+}
+/* End Video */
