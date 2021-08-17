@@ -711,6 +711,7 @@ padding: 10px;
   .about .stat .container > div{
     flex-basis:50%;
   }
+}
 @media (max-width: 767px){
   .about .devices{
     margin-top: -80px;
@@ -720,11 +721,178 @@ padding: 10px;
   }
   .about .stat {
     padding-top: 60px;
-  padding-bottom: 60px; 
+   padding-bottom: 60px; 
   }
   .about .stat .container > div{
     flex-basis:100%;
     margin-bottom: 10px;
   }
 }
+
 /* End About */
+
+/* Start Skills */
+
+/*  Genral */
+.skills {
+  padding-bottom: 100px;
+}
+.skills .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.skills .container > div  {
+  flex-basis: 46%;
+  padding: 25px;
+}
+.skills .container > div > h4  { 
+margin: 0 0 30px;
+font-size: 20px;
+font-weight: normal;
+text-align: center;
+}
+.skills .container > div > p  {
+  margin: 0 0 30px;
+  line-height: 1.8;
+  color: #777;
+  text-align: center;
+}
+/*  Genral */
+
+/* Start testimonials section */
+
+ .skills .container .testimonials  {
+  position: relative;
+ }
+ .skills .container .testimonials .bullets  {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+ }
+ .skills .container .testimonials .bullets li  {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+    background-color: transparent;
+    display: block;
+ }
+ .skills .container .testimonials .bullets li.active  {
+   
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+   
+ }
+.skills .container .testimonials .feedback  {
+  display: flex;
+  flex-direction: column;  
+}
+.skills .container .testimonials .feedback .person {
+  display: flex;
+  margin: 0 0 30px;
+  align-items: center;
+}
+.skills .container .testimonials .feedback .person img{
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 40px;
+}
+.skills .container .testimonials .feedback .person .box{
+  padding: 15px 0 5px;
+  border-bottom: 1px solid #ddd;
+}
+.skills .container .testimonials .feedback .person .box p {
+  line-height: 2;
+  padding:  10px 0;
+}
+.skills .container .testimonials .feedback .person .box span {
+  display: block;
+  text-align: right;
+  margin: 10px 0 ;
+  color: #777;
+} 
+
+
+/* End  testimonials section */
+
+/* Start Our-skill Section */
+
+.skills .container .our-skill .progress-parent  {
+  padding: 25px 0 5px;
+  display: flex;
+  flex-direction: column;
+}
+.skills .container .our-skill .progress-parent .prog-skill  {
+  margin-bottom: 40px;
+}
+.skills .container .our-skill .progress-parent .prog-skill p  {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.skills .container .our-skill .progress-parent .prog-skill .bar  {
+ background-color: #dedadc ; 
+ height: 25px;
+}
+.skills .container .our-skill .progress-parent .prog-skill .bar span {
+  display: inline-block;
+  background-color: var(--main-color);
+  height: 100%;
+  position: relative;
+} 
+.skills .container .our-skill .progress-parent .prog-skill .bar span::before {
+  content: attr(data-prog);
+    position: absolute;
+    right: -20px;
+    top: -40px;
+    width: 40px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 6px;
+    padding: 3px;
+    text-align: center;
+} 
+.skills .container .our-skill .progress-parent .prog-skill .bar span::after {
+ content: "";
+ width: 0;
+ border-width: 8px;
+ border-style: solid;
+ border-color: #000 transparent transparent;
+ position: absolute;
+ right: -7px;
+ top: -16px;
+} 
+@media (max-width : 991px){
+  .skills .container > div {
+    flex-basis: 47%;
+    padding: 15px;
+}
+  .skills .container .testimonials .feedback .person .box p {
+    line-height: 1.5;
+    padding: 8px 0;
+    font-size: 14px;
+}
+.skills .container .testimonials .feedback .person img {
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+}
+@media(max-width :767px){
+  .skills {
+    padding-bottom: 50px;
+}
+.skills .container {
+  flex-direction: column;
+}
+.skills .container > div > h4 {
+  margin: 30px 0;
+}
+}
+/* End Our-skill Section */
+
+/* End Skills */
