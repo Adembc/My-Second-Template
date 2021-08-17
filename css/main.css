@@ -896,3 +896,68 @@ text-align: center;
 /* End Our-skill Section */
 
 /* End Skills */
+
+/* Start Quote */
+.quote{
+  padding: 100px;
+  background-image: url("../images/quote.jpg");
+  background-size: cover;
+  position: relative;
+ 
+ 
+}
+.quote::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0 0 0 / 80%);
+}
+.quote .box{
+  z-index: 10;
+  color: white;
+  text-align: center;
+}
+.quote q{
+  font-size: 30px;
+  display: block;
+  margin: 0 auto 20px;
+}
+q::before{
+  content: "\f10d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: white;
+  font-size: 20px;
+  margin-right: 8px;
+  position: relative;
+  top: -10px;
+}
+q::after{
+  content: "\f10e";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: white;
+  font-size: 20px;
+  position: relative;
+  margin-left: 8px;
+  top: 10px;
+
+}
+.quote p{
+  margin: 0 0 15px;
+  color: #ccc;
+}
+
+@media (max-width : 767px){
+  .quote{
+    padding: 50px;
+  }
+  .quote q{
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+}
+/* End Quote */
