@@ -1152,30 +1152,6 @@ q::after{
 .contact .container .content {
   display: flex;
 }
-@media (max-width : 767px){
-.contact .container .content {
-   flex-direction: column-reverse;
-}
-}
-.contact .container .content form {
-  display: flex;
-  flex-direction: column;
-  width: 800px;
-  max-width: 100%;
-  margin-right: 50px;
-}
-form > *:focus{
-  outline: none;
-}
-.contact .container .content form input:not([type="submit"]) , 
-.contact .container .content form textarea{
-  margin-bottom: 30px;
-    border: 1px solid #ddd;
-    padding: 20px;
-}
-  textarea {
-  resize: none;
-}
 .contact .container .content form input[type="submit"] {
   display: block;
     padding: 20px;
@@ -1228,6 +1204,50 @@ display: inline-block;
  line-height: 2;
  color: #777;
 }
+@media (max-width : 767px){
+  .contact .container .content {
+     flex-direction: column-reverse;
+  }
+  }
+  .contact .container .content form {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    max-width: 100%;
+    margin-right: 50px;
+  }
+  form > *:focus{
+    outline: none;
+  }
+  .contact .container .content form input:not([type="submit"]) , 
+  .contact .container .content form textarea{
+     margin: 0 auto 30px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      width: 100%;
+      caret-color: var(--main-color);
+  }
+  textarea {
+    resize: none;
+  }
+  @media (max-width:767px){
+    .contact .container .content form { 
+      max-width: 95%;
+    }
+    .contact .container .content form input:not([type="submit"]) , 
+  .contact .container .content form textarea{
+    max-width: 95%;
+  }
+  .contact .container .content form input[type="submit"] {
+  
+      align-self: center;
+      
+  }
+  .contact .container .content .box address{
+   margin-bottom: 25px;
+   }
+  }
+
 /* End Contact Us */
 
 /* Start Footer */
@@ -1272,17 +1292,16 @@ footer .social-media {
  position: relative;
  margin-bottom: 60px;
 }
-footer .social-media li {
- transition: .3s;
-}
-footer .social-media li:hover {
- transform: translateY(-10px)
-}
 footer .social-media li a{
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 10px;
   color: white;
+  transition: .3s;
+  padding: 10px;
 }
+footer .social-media li a:hover {
+  transform: translateY(-10px)
+ }
 footer .social-media li a i {
   font-size: 20px;
 }
